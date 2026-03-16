@@ -19,13 +19,16 @@
 - [foundation](./DevDocs/TechStack.md)
 - [styling & typography](./DevDocs/StylingTypography.md)
 
-**Step 4** 
+**[Step 4](./DevDocs/HeaderFooter.md)** 
 - gets the shared shell in place so every page has a consistent frame
-- building the shared [Header and Footer components](./DevDocs/HeaderFooter.md)
+- building the shared Header and Footer components
+
+**[Step 5](./DevDocs/TypedContentFiles.md)**
+- the content model, which comes before components, not after
+- so you are not redesigning sections when the content does not fit
 
 
-
-<!-- Step 5 is the content model, which comes before components, not after, so you are not redesigning sections when the content does not fit.
+<!-- .
 Steps 6–7 are the actual build, homepage first because it is the most complex and sets the pattern, then inner pages second.
 Step 8 is motion last, not first. This is important: animations added at the end are much easier to tune than ones baked in from the start.
 Steps 9–10 are polish and deploy. -->
