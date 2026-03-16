@@ -27,6 +27,12 @@
 - the content model, which comes before components, not after
 - so you are not redesigning sections when the content does not fit
 
+**[Steps 6](./DevDocs/HomepageBuild.md)**
+- build actual homepage
+are the actual build, homepage first because it is the most complex and sets the pattern, then inner pages second
+
+<!-- [Step 7](./DevDocs/)
+- building the inner pages -->
 
 <!-- .
 Steps 6–7 are the actual build, homepage first because it is the most complex and sets the pattern, then inner pages second.
