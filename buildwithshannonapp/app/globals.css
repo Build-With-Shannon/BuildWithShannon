@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+/* ─── Brand Design Tokens ─────────────────────────────────────────────────── */
+@theme inline {
+
+  /* Colors */
+  --color-brand-primary:    #6C3EF4; /* Primary Purple  */
+  --color-brand-charcoal:   #1F2430; /* Deep Charcoal   */
+  --color-brand-soft-gray:  #E9EAF0; /* Soft Gray       */
+  --color-brand-off-white:  #F8F9FC; /* Off White       */
+  --color-brand-violet:     #B7A6F8; /* Muted Violet    */
+
+  /* Semantic aliases */
+  --color-background:       var(--color-brand-off-white);
+  --color-foreground:       var(--color-brand-charcoal);
+  --color-border:           var(--color-brand-soft-gray);
+
+  /* Hero gradient */
+  --color-hero-from:        #0e0b1f;
+  --color-hero-to:          #1a1035;
+
+  /* Font family slots — wired to Next Font variables in layout.tsx */
+  --font-heading:           var(--font-cormorant-garamond);
+  --font-body:              var(--font-sora);
+
+  /* Spacing extras */
+  --spacing-section:        6rem;
+
+  /* Border radius */
+  --radius-card:            0.75rem;
+  --radius-btn:             0.5rem;
+
+  /* Shadows */
+  --shadow-card:            0 4px 24px 0 rgba(108, 62, 244, 0.08);
+  --shadow-btn:             0 2px 12px 0 rgba(108, 62, 244, 0.25);
+}
+
+/* ─── Base Styles ─────────────────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-brand-off-white);
+  color: var(--color-brand-charcoal);
+  font-family: var(--font-body), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
