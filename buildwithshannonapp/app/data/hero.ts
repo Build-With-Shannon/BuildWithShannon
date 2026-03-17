@@ -3,7 +3,7 @@ import { HeroContent } from './types';
 export const heroContent: HeroContent = {
   lines: [
     {
-      text: 'Shannon Reed.',
+      text: 'Shannon Reed',
       style: 'bold',
     },
     {

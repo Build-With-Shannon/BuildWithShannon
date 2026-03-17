@@ -28,9 +28,10 @@
 - so you are not redesigning sections when the content does not fit
 
 **[Steps 6](./DevDocs/HomepageBuild.md)**
-- build actual homepage
-are the actual build, homepage first because it is the most complex and sets the pattern, then inner pages second
+- build actual homepage first because it is the most complex and sets the pattern, then inner pages second
 
+
+STEP 7 COMPLETE yOU NEED TO CREATE BRANCH AND PUSH CHECK ANYTHING ELSE YOU WANT TO CHANGE OR ADD AND THEN START STEP 8
 <!-- [Step 7](./DevDocs/)
 - building the inner pages -->
 

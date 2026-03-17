@@ -10,7 +10,7 @@ export default function FeaturedWorkSection({ content }: FeaturedWorkSectionProp
     <section id="featured-work" className="bg-brand-off-white py-24">
       <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
         {/* Left */}
-        <div className="flex flex-col gap-6">
+        <div className="motion-enter flex flex-col gap-6">
           <span className="text-xs font-semibold uppercase tracking-widest text-brand-primary">
             {content.eyebrow}
           </span>
@@ -29,37 +29,28 @@ export default function FeaturedWorkSection({ content }: FeaturedWorkSectionProp
         </div>
 
         {/* Right — project cards */}
-        <div className="flex flex-col gap-6">
+        <div className="motion-stagger grid grid-cols-1 sm:grid-cols-2 gap-6">
           {content.projects.map((project) => (
-            <div
+            <Link
               key={project.id}
-              className="bg-white rounded-[var(--radius-card)] border border-brand-soft-gray overflow-hidden"
+              href={project.href}
+              className="group relative h-56 rounded-[var(--radius-card)] border border-brand-soft-gray overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:border-brand-primary"
               style={{ boxShadow: 'var(--shadow-card)' }}
             >
               {/* Image placeholder */}
-              <div className="h-44 bg-gradient-to-br from-brand-soft-gray to-brand-off-white flex items-center justify-center">
-                <span className="text-xs text-brand-charcoal/30 uppercase tracking-wider font-medium">
-                  Project Image
-                </span>
+              <div
+                className="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-[1.03]"
+                style={{
+                  backgroundImage: `url(${project.imageUrl ?? '/images/image.png'})`,
+                }}
+              >
+                <div className="absolute inset-0 bg-brand-charcoal/20" />
               </div>
-              <div className="p-6 flex flex-col gap-3">
-                <span className="text-xs font-semibold uppercase tracking-widest text-brand-primary">
-                  {project.tag}
-                </span>
-                <h3 className="text-lg font-semibold text-brand-charcoal leading-snug">
-                  {project.title}
-                </h3>
-                <p className="text-sm text-brand-charcoal/70 leading-relaxed">
-                  {project.description}
-                </p>
-                <Link
-                  href={project.href}
-                  className="w-fit text-sm font-semibold text-brand-primary hover:text-brand-violet transition-colors mt-1"
-                >
-                  View Project →
-                </Link>
-              </div>
-            </div>
+              <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-brand-charcoal/90 to-transparent" />
+              <h3 className="absolute bottom-4 left-4 right-4 text-lg font-semibold text-white leading-snug">
+                {project.title}
+              </h3>
+            </Link>
           ))}
         </div>
       </div>

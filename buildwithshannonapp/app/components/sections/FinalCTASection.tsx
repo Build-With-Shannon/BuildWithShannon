@@ -11,7 +11,7 @@ export default function FinalCTASection({ content }: FinalCTASectionProps) {
       className="py-28 text-center"
       style={{ background: 'linear-gradient(135deg, #0a0718 0%, #1a1035 100%)' }}
     >
-      <div className="max-w-3xl mx-auto px-6 flex flex-col items-center gap-8">
+      <div className="motion-enter max-w-3xl mx-auto px-6 flex flex-col items-center gap-8">
         {/* Decorative line */}
         <div className="h-px w-12 bg-brand-violet" />
 
@@ -22,7 +22,7 @@ export default function FinalCTASection({ content }: FinalCTASectionProps) {
           {content.description}
         </p>
 
-        <div className="flex flex-wrap gap-4 justify-center">
+        <div className="motion-stagger flex flex-wrap gap-4 justify-center">
           {content.buttons.map((btn) =>
             btn.variant === 'primary' ? (
               <Link

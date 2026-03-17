@@ -4,7 +4,7 @@
 @theme inline {
 
   /* Colors */
-  --color-brand-primary:    #6C3EF4; /* Primary Purple  */
+  --color-brand-primary:    #503080; /* Primary Purple  */
   --color-brand-charcoal:   #1F2430; /* Deep Charcoal   */
   --color-brand-soft-gray:  #E9EAF0; /* Soft Gray       */
   --color-brand-off-white:  #F8F9FC; /* Off White       */
@@ -31,8 +31,8 @@
   --radius-btn:             0.5rem;
 
   /* Shadows */
-  --shadow-card:            0 4px 24px 0 rgba(108, 62, 244, 0.08);
-  --shadow-btn:             0 2px 12px 0 rgba(108, 62, 244, 0.25);
+  --shadow-card:            0 4px 24px 0 rgba(80, 48, 128, 0.08);
+  --shadow-btn:             0 2px 12px 0 rgba(80, 48, 128, 0.25);
 }
 
 /* ─── Base Styles ─────────────────────────────────────────────────────────── */
@@ -41,9 +41,133 @@ html {
 }
 
 body {
-  background-color: var(--color-brand-off-white);
+  background:
+    radial-gradient(circle at top, rgba(183, 166, 248, 0.14), transparent 28%),
+    linear-gradient(180deg, #eef1f7 0%, #f3f5fa 100%);
   color: var(--color-brand-charcoal);
   font-family: var(--font-body), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 200;
+  border-radius: 0.5rem;
+  background: var(--color-brand-charcoal);
+  color: var(--color-brand-off-white);
+  padding: 0.55rem 0.9rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transform: translateY(-140%);
+  opacity: 0;
+  transition: transform 220ms ease, opacity 220ms ease;
+}
+
+.skip-link:focus-visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 2px rgba(80, 48, 128, 0.75),
+    0 0 0 4px rgba(248, 249, 252, 0.9);
+  border-radius: 0.45rem;
+}
+
+/* ─── Motion Tokens + Utilities ─────────────────────────────────────────── */
+:root {
+  --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --motion-fast: 420ms;
+  --motion-normal: 620ms;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.motion-enter {
+  opacity: 0;
+  animation: fade-up var(--motion-normal) var(--motion-ease) both;
+}
+
+.motion-soft {
+  opacity: 0;
+  animation: fade-in var(--motion-fast) ease-out both;
+}
+
+.motion-delay-1 {
+  animation-delay: 100ms;
+}
+
+.motion-delay-2 {
+  animation-delay: 180ms;
+}
+
+.motion-delay-3 {
+  animation-delay: 260ms;
+}
+
+.motion-stagger > * {
+  opacity: 0;
+  animation: fade-up var(--motion-normal) var(--motion-ease) both;
+}
+
+.motion-stagger > *:nth-child(1) { animation-delay: 60ms; }
+.motion-stagger > *:nth-child(2) { animation-delay: 140ms; }
+.motion-stagger > *:nth-child(3) { animation-delay: 220ms; }
+.motion-stagger > *:nth-child(4) { animation-delay: 300ms; }
+
+.reveal {
+  opacity: 0;
+  transform: translate3d(0, 36px, 0);
+  transition:
+    opacity 860ms var(--motion-ease),
+    transform 860ms var(--motion-ease);
+  will-change: transform, opacity;
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+  }
+
+  .reveal,
+  .reveal-visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }

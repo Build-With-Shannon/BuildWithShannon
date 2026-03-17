@@ -10,7 +10,7 @@ export default function WorkWithMeSection({ content }: WorkWithMeSectionProps) {
     <section className="bg-brand-charcoal py-24">
       <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
         {/* Left — positioning copy */}
-        <div className="flex flex-col gap-6">
+        <div className="motion-enter flex flex-col gap-6">
           <span className="text-xs font-semibold uppercase tracking-widest text-brand-violet">
             Work With Me
           </span>
@@ -29,11 +29,11 @@ export default function WorkWithMeSection({ content }: WorkWithMeSectionProps) {
         </div>
 
         {/* Right — service blocks */}
-        <div className="flex flex-col gap-4">
+        <div className="motion-stagger flex flex-col gap-4">
           {content.services.map((service) => (
             <div
               key={service.id}
-              className="p-6 rounded-[var(--radius-card)] border border-white/10 bg-white/5 hover:bg-white/10 transition-colors"
+              className="p-6 rounded-[var(--radius-card)] border border-white/10 bg-white/5 hover:bg-white/10 transition-all duration-300 hover:-translate-y-0.5"
             >
               <h3 className="text-base font-semibold text-white mb-2">
                 {service.title}

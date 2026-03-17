@@ -61,7 +61,7 @@ Brand direction:
 Build With Shannon is a personal brand focused on building, teaching, and creating smart solutions with AI. The homepage should communicate credibility, structure, clarity, and thoughtful design.
 
 Use this color system:
-PRIMARY PURPLE #6C3EF4
+PRIMARY PURPLE #8040D0
   - for primary buttons, CTAs, and major accent elements
 Deep Charcoal #1F2430
 Soft Gray #E9EAF0

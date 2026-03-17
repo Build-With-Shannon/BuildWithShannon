@@ -8,18 +8,18 @@ export default function ResourcesSection({ content }: ResourcesSectionProps) {
   return (
     <section className="bg-brand-off-white py-24">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="mb-12">
+        <div className="motion-enter mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-brand-charcoal tracking-tight">
             {content.headline}
           </h2>
           <div className="mt-3 h-px w-12 bg-brand-primary" />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="motion-stagger grid grid-cols-1 md:grid-cols-3 gap-6">
           {content.cards.map((card) => (
             <div
               key={card.id}
-              className="bg-white rounded-[var(--radius-card)] border border-brand-soft-gray overflow-hidden"
+              className="bg-white rounded-[var(--radius-card)] border border-brand-soft-gray overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:border-brand-primary"
               style={{ boxShadow: 'var(--shadow-card)' }}
             >
               {/* Cover placeholder */}

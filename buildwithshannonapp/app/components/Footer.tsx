@@ -16,10 +16,10 @@ export default function Footer() {
     <footer className="bg-brand-charcoal text-brand-off-white border-t border-brand-violet border-opacity-30">
       <div className="px-6 py-12 max-w-7xl mx-auto">
         {/* Top section */}
-        <div className="flex justify-between items-start gap-12 mb-8 pb-8 border-b border-brand-violet border-opacity-20">
+        <div className="mb-8 flex flex-col items-start gap-10 border-b border-brand-violet border-opacity-20 pb-8 lg:flex-row lg:justify-between lg:gap-12">
           {/* Brand */}
-          <div>
-            <Link href="/" className="text-lg font-semibold tracking-tight mb-2 block">
+          <div className="max-w-md">
+            <Link href="/" className="text-lg font-semibold tracking-tight mb-2 block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-violet/70 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-charcoal">
               Build With Shannon
             </Link>
             <p className="text-sm text-brand-soft-gray">
@@ -28,13 +28,13 @@ export default function Footer() {
           </div>
 
           {/* Navigation */}
-          <nav>
+          <nav aria-label="Footer navigation">
             <ul className="flex flex-col gap-3">
               {navItems.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-sm text-brand-soft-gray hover:text-brand-off-white transition-colors"
+                    className="text-sm text-brand-soft-gray hover:text-brand-off-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-violet/70 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-charcoal"
                   >
                     {item.label}
                   </Link>
@@ -44,11 +44,11 @@ export default function Footer() {
           </nav>
 
           {/* Social */}
-          <div>
+          <div className="w-full lg:w-auto">
             <p className="text-xs uppercase tracking-wider text-brand-violet mb-3">
               Connect
             </p>
-            <ul className="flex gap-4">
+            <ul className="flex flex-wrap gap-4">
               {[
                 { label: 'LinkedIn', href: '#' },
                 { label: 'Twitter', href: '#' },
@@ -57,7 +57,7 @@ export default function Footer() {
                 <li key={social.label}>
                   <Link
                     href={social.href}
-                    className="text-sm text-brand-soft-gray hover:text-brand-primary transition-colors"
+                    className="text-sm text-brand-soft-gray hover:text-brand-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-violet/70 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-charcoal"
                   >
                     {social.label}
                   </Link>

@@ -15,7 +15,7 @@ export default function LearnSection({ content }: LearnSectionProps) {
   return (
     <section className="bg-brand-soft-gray/30 py-24">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="mb-12">
+        <div className="motion-enter mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-brand-charcoal tracking-tight mb-4">
             {content.headline}
           </h2>
@@ -24,19 +24,22 @@ export default function LearnSection({ content }: LearnSectionProps) {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="motion-stagger grid grid-cols-1 md:grid-cols-3 gap-6">
           {content.cards.map((card) => (
             <Link
               key={card.id}
               href={card.href}
-              className="group bg-white rounded-[var(--radius-card)] border border-brand-soft-gray overflow-hidden hover:border-brand-primary transition-colors"
+              className="group bg-white rounded-[var(--radius-card)] border border-brand-soft-gray overflow-hidden hover:border-brand-primary transition-all duration-300 hover:-translate-y-1"
               style={{ boxShadow: 'var(--shadow-card)' }}
             >
-              {/* Thumbnail placeholder */}
-              <div className="h-40 bg-gradient-to-br from-brand-soft-gray to-brand-off-white flex items-center justify-center">
-                <span className="text-xs text-brand-charcoal/30 uppercase tracking-wider font-medium">
-                  Thumbnail
-                </span>
+              {/* Thumbnail */}
+              <div
+                className="h-40 bg-cover bg-center"
+                style={{
+                  backgroundImage: `url(${card.thumbnailUrl ?? '/images/learn1.png'})`,
+                }}
+              >
+                <div className="h-full w-full bg-brand-charcoal/10" />
               </div>
               <div className="p-5 flex flex-col gap-2">
                 <span className="text-xs font-semibold uppercase tracking-widest text-brand-primary">
