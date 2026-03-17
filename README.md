@@ -1,41 +1,55 @@
 # Build With Shannon
 
-- `npm start` only serves the production build
-- if there is no fresh build, it can fail with exit code 1
+## High-Level Overview
 
-*Use this flow inside buildwithshannonapp:*
-- `npm run build`
-- `npm start`
+Build With Shannon is a premium personal brand website designed to present Shannon as a builder, teacher, and systems-focused creator working with AI.
 
-*For active development, use:*
-- `npm run dev`
+The site is built as a brand headquarters, not a portfolio. It gives visitors clear paths to:
 
-“starter screen” = normal, because page.tsx:1 is still default.
-“start fails” = usually means you need npm run build first.
---------------------------------------------------------------------
+- learn through tutorials, guides, and resources
+- explore systems and featured work
+- engage through services and contact pathways
 
-**Steps 1–3 are setup**
-*All these have to be right before you touch a single component*
-- [foundation](./DevDocs/TechStack.md)
-- [styling & typography](./DevDocs/StylingTypography.md)
+## Project Goals
 
-**[Step 4](./DevDocs/HeaderFooter.md)** 
-- gets the shared shell in place so every page has a consistent frame
-- building the shared Header and Footer components
+- Establish a modern, credible personal brand presence
+- Communicate structured thinking and technical authority
+- Support multiple audience journeys (learn, explore, work together)
+- Maintain a polished, intentional visual system across all pages
 
-**[Step 5](./DevDocs/TypedContentFiles.md)**
-- the content model, which comes before components, not after
-- so you are not redesigning sections when the content does not fit
+## Tech Stack (High Level)
 
-**[Steps 6](./DevDocs/HomepageBuild.md)**
-- build actual homepage first because it is the most complex and sets the pattern, then inner pages second
+- Next.js (App Router)
+- React + TypeScript
+- Tailwind CSS
 
+## What the Site Includes
 
-STEP 7 COMPLETE yOU NEED TO CREATE BRANCH AND PUSH CHECK ANYTHING ELSE YOU WANT TO CHANGE OR ADD AND THEN START STEP 8
-<!-- [Step 7](./DevDocs/)
-- building the inner pages -->
+- A full homepage with hero, intro strip, featured work, learning, services, resources, and CTA sections
+- Inner pages for About, Learn, Systems, Work With Me, Resources, and Contact
+- Reusable layout shell (header, footer, shared styling tokens)
+- Accessibility and polish basics (focus states, metadata, responsive behavior)
 
-<!-- .
-Steps 6–7 are the actual build, homepage first because it is the most complex and sets the pattern, then inner pages second.
-Step 8 is motion last, not first. This is important: animations added at the end are much easier to tune than ones baked in from the start.
-Steps 9–10 are polish and deploy. -->
+## Architecture Snapshot
+
+- `buildwithshannonapp/app/` contains routes, shared layout, and global styles
+- `buildwithshannonapp/app/components/` contains reusable UI and section components
+- `buildwithshannonapp/app/data/` contains typed content models used by sections/pages
+- `buildwithshannonapp/public/images/` stores image assets used by the UI
+
+## Run Locally
+
+From `buildwithshannonapp/`:
+
+```bash
+npm install
+npm run dev
+```
+
+For production check:
+
+```bash
+npm run build
+npm start
+```
+
