@@ -3,7 +3,7 @@ import { FeaturedWorkSection } from './types';
 export const featuredWorkContent: FeaturedWorkSection = {
   eyebrow: 'Featured Work',
   headline: 'My Latest Systems.',
-  description: 'A curated collection of the systems and solutions I have built and am currently teaching.',
+  description: 'A system that turns scattered AI conversations into a private, searchable intelligence system you can actually use.',
   ctaButton: {
     label: 'Work With Me',
     href: '/work-with-me',
@@ -11,10 +11,10 @@ export const featuredWorkContent: FeaturedWorkSection = {
   projects: [
     {
       id: 'project-1',
-      title: 'AI-Powered Content Strategy Framework',
+      title: 'Personal AI System',
       tag: 'Systems',
       description: 'A structured approach to building content systems that leverage AI for clarity, consistency, and scale.',
-      imageUrl: '/images/image.png',
+      imageUrl: '/images/personal-ai-system.jpg',
       href: '/systems',
     },
     {
