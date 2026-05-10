@@ -11,7 +11,7 @@ export default function HeroSection({ content }: HeroSectionProps) {
       className="relative min-h-[72vh] flex items-center overflow-hidden md:min-h-[76vh]"
       style={{
         backgroundImage:
-          "url('/images/herobgimg.jpg'), linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.6) 100%)",
+          "url('/images/herobgimg1.png'), linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.6) 100%)",
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
