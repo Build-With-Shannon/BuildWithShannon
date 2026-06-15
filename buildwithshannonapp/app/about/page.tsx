@@ -48,7 +48,7 @@ export default function AboutPage() {
             </div>
             <Link
               href="/work-with-me"
-              className="w-fit px-7 py-3 bg-brand-primary text-white text-sm font-semibold rounded-[var(--radius-btn)] hover:opacity-90 transition-opacity"
+              className="w-fit px-7 py-3 bg-brand-cta text-brand-charcoal text-sm font-semibold rounded-[var(--radius-btn)] hover:opacity-90 transition-opacity"
             >
               Work With Me
             </Link>

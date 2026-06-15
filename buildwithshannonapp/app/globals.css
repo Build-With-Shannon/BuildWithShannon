@@ -4,11 +4,12 @@
 @theme inline {
 
   /* Colors */
-  --color-brand-primary:    #503080; /* Primary Purple  */
-  --color-brand-charcoal:   #1F2430; /* Deep Charcoal   */
-  --color-brand-soft-gray:  #E9EAF0; /* Soft Gray       */
-  --color-brand-off-white:  #F8F9FC; /* Off White       */
-  --color-brand-violet:     #B7A6F8; /* Muted Violet    */
+  --color-brand-primary:    #00A896; /* Teal            */
+  --color-brand-charcoal:   #0f0f0f; /* Near Black      */
+  --color-brand-soft-gray:  #e5e3de; /* Warm Gray       */
+  --color-brand-off-white:  #F4F3F9; /* Page Background */
+  --color-brand-violet:     #F5A623; /* Amber Accent    */
+  --color-brand-cta:        #F5A623; /* Amber CTA       */
 
   /* Semantic aliases */
   --color-background:       var(--color-brand-off-white);
@@ -16,11 +17,11 @@
   --color-border:           var(--color-brand-soft-gray);
 
   /* Hero gradient */
-  --color-hero-from:        #0e0b1f;
-  --color-hero-to:          #1a1035;
+  --color-hero-from:        #0f0f0f;
+  --color-hero-to:          #111111;
 
   /* Font family slots — wired to Next Font variables in layout.tsx */
-  --font-heading:           var(--font-cormorant-garamond);
+  --font-heading:           var(--font-plus-jakarta-sans);
   --font-body:              var(--font-sora);
 
   /* Spacing extras */
@@ -31,8 +32,34 @@
   --radius-btn:             0.5rem;
 
   /* Shadows */
-  --shadow-card:            0 4px 24px 0 rgba(80, 48, 128, 0.08);
-  --shadow-btn:             0 2px 12px 0 rgba(80, 48, 128, 0.25);
+  --shadow-card:            0 4px 24px 0 rgba(0, 168, 150, 0.08);
+  --shadow-btn:             0 2px 12px 0 rgba(0, 168, 150, 0.25);
+}
+
+/* ─── Dark Section ────────────────────────────────────────────────────────── */
+.dark-section {
+  position: relative;
+  overflow: hidden;
+  background-color: #0f0e1a;
+  isolation: isolate;
+}
+
+.dark-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 40%, rgba(0, 168, 150, 0.28) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.dark-section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 80% 60%, rgba(91, 61, 191, 0.2) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: -1;
 }
 
 /* ─── Base Styles ─────────────────────────────────────────────────────────── */
@@ -41,9 +68,7 @@ html {
 }
 
 body {
-  background:
-    radial-gradient(circle at top, rgba(183, 166, 248, 0.14), transparent 28%),
-    linear-gradient(180deg, #eef1f7 0%, #f3f5fa 100%);
+  background: var(--color-brand-off-white);
   color: var(--color-brand-charcoal);
   font-family: var(--font-body), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -75,22 +100,22 @@ a:focus-visible,
 button:focus-visible {
   outline: none;
   box-shadow:
-    0 0 0 2px rgba(80, 48, 128, 0.75),
-    0 0 0 4px rgba(248, 249, 252, 0.9);
+    0 0 0 2px rgba(0, 168, 150, 0.75),
+    0 0 0 4px rgba(248, 247, 244, 0.9);
   border-radius: 0.45rem;
 }
 
 /* ─── Motion Tokens + Utilities ─────────────────────────────────────────── */
 :root {
   --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
-  --motion-fast: 420ms;
-  --motion-normal: 620ms;
+  --motion-fast: 280ms;
+  --motion-normal: 480ms;
 }
 
 @keyframes fade-up {
   from {
     opacity: 0;
-    transform: translate3d(0, 18px, 0);
+    transform: translate3d(0, 12px, 0);
   }
   to {
     opacity: 1;
@@ -118,15 +143,15 @@ button:focus-visible {
 }
 
 .motion-delay-1 {
-  animation-delay: 100ms;
+  animation-delay: 70ms;
 }
 
 .motion-delay-2 {
-  animation-delay: 180ms;
+  animation-delay: 130ms;
 }
 
 .motion-delay-3 {
-  animation-delay: 260ms;
+  animation-delay: 190ms;
 }
 
 .motion-stagger > * {
@@ -134,17 +159,17 @@ button:focus-visible {
   animation: fade-up var(--motion-normal) var(--motion-ease) both;
 }
 
-.motion-stagger > *:nth-child(1) { animation-delay: 60ms; }
-.motion-stagger > *:nth-child(2) { animation-delay: 140ms; }
-.motion-stagger > *:nth-child(3) { animation-delay: 220ms; }
-.motion-stagger > *:nth-child(4) { animation-delay: 300ms; }
+.motion-stagger > *:nth-child(1) { animation-delay: 40ms; }
+.motion-stagger > *:nth-child(2) { animation-delay: 90ms; }
+.motion-stagger > *:nth-child(3) { animation-delay: 140ms; }
+.motion-stagger > *:nth-child(4) { animation-delay: 190ms; }
 
 .reveal {
   opacity: 0;
-  transform: translate3d(0, 36px, 0);
+  transform: translate3d(0, 14px, 0);
   transition:
-    opacity 860ms var(--motion-ease),
-    transform 860ms var(--motion-ease);
+    opacity 500ms var(--motion-ease),
+    transform 500ms var(--motion-ease);
   will-change: transform, opacity;
 }
 

@@ -8,8 +8,7 @@ interface FinalCTASectionProps {
 export default function FinalCTASection({ content }: FinalCTASectionProps) {
   return (
     <section
-      className="py-28 text-center"
-      style={{ background: 'linear-gradient(135deg, #0a0718 0%, #1a1035 100%)' }}
+      className="dark-section py-28 text-center"
     >
       <div className="motion-enter max-w-3xl mx-auto px-6 flex flex-col items-center gap-8">
         {/* Decorative line */}
@@ -28,7 +27,7 @@ export default function FinalCTASection({ content }: FinalCTASectionProps) {
               <Link
                 key={btn.label}
                 href={btn.href}
-                className="px-8 py-3 bg-brand-primary text-white text-sm font-semibold rounded-[var(--radius-btn)] hover:opacity-90 transition-opacity"
+                className="px-8 py-3 bg-brand-cta text-brand-charcoal text-sm font-semibold rounded-[var(--radius-btn)] hover:opacity-90 transition-opacity"
               >
                 {btn.label}
               </Link>

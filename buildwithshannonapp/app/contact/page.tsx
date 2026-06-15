@@ -54,7 +54,7 @@ export default function ContactPage() {
             <div className="flex flex-wrap gap-3">
               <Link
                 href="/work-with-me"
-                className="px-6 py-3 bg-brand-primary text-white text-sm font-semibold rounded-[var(--radius-btn)] hover:opacity-90 transition-opacity"
+                className="px-6 py-3 bg-brand-cta text-brand-charcoal text-sm font-semibold rounded-[var(--radius-btn)] hover:opacity-90 transition-opacity"
               >
                 View Services
               </Link>

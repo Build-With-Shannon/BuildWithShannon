@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
 export default function Header() {
@@ -26,10 +27,16 @@ export default function Header() {
         {/* Logo */}
         <Link
           href="/"
-          className="text-xl font-semibold tracking-tight text-brand-charcoal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary/70 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-off-white"
+          className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary/70 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-off-white"
           onClick={() => setIsMobileMenuOpen(false)}
         >
-          Build With Shannon
+          <Image
+            src="/images/bws-logo-light-transparent.png"
+            alt="Build With Shannon"
+            width={160}
+            height={36}
+            className="h-8 w-auto"
+          />
         </Link>
 
         {/* Desktop Navigation */}
@@ -56,7 +63,7 @@ export default function Header() {
         {/* Desktop CTA Button */}
         <Link
           href="/#featured-work"
-          className="ml-6 hidden rounded-[var(--radius-btn)] bg-brand-primary px-6 py-2 text-sm font-medium text-brand-off-white transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary/70 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-off-white lg:inline-flex"
+          className="ml-6 hidden rounded-[var(--radius-btn)] bg-brand-cta px-6 py-2 text-sm font-medium text-brand-charcoal transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary/70 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-off-white lg:inline-flex"
         >
           Explore
         </Link>
@@ -98,7 +105,7 @@ export default function Header() {
 
           <Link
             href="/#featured-work"
-            className="mt-8 inline-flex rounded-[var(--radius-btn)] bg-brand-primary px-6 py-3 text-base font-medium text-brand-off-white transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary/70 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-off-white"
+            className="mt-8 inline-flex rounded-[var(--radius-btn)] bg-brand-cta px-6 py-3 text-base font-medium text-brand-charcoal transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary/70 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-off-white"
             onClick={() => setIsMobileMenuOpen(false)}
           >
             Explore

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Build With Shannon — Homepage Mockup</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,600;0,700;0,800;1,700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --teal: #00A896;
+      --purple: #5B3DBF;
+      --amber: #F5A623;
+      --black: #0f0f0f;
+      --off-white: #F8F7F4;
+      --border: #e5e3de;
+      --muted: #6b6b6b;
+    }
+    body { font-family: 'Inter', sans-serif; color: #1a1a1a; background: #fff; }
+    h1, h2, h3, .logo, .btn-primary, .btn-cta, .btn-outline { font-family: 'Plus Jakarta Sans', sans-serif; }
+
+    /* NAV */
+    nav {
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo { font-size: 17px; font-weight: 800; letter-spacing: -0.2px; text-decoration: none; }
+    .logo .b { color: var(--teal); }
+    .logo .w { font-weight: 700; font-style: italic; opacity: 0.55; color: #1a1a1a; }
+    .logo .s { color: var(--purple); font-weight: 700; }
+    .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+    .nav-links a { font-size: 14px; color: #1a1a1a; text-decoration: none; font-weight: 500; }
+    .btn-cta {
+      background: var(--amber);
+      color: #0f0f0f;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+
+    /* HERO */
+    .hero { background: var(--black); color: #fff; padding: 5rem 2rem 4.5rem; }
+    .mono-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--teal);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+    .hero h1 {
+      font-size: 42px;
+      font-weight: 800;
+      line-height: 1.13;
+      margin-bottom: 1.25rem;
+      max-width: 600px;
+    }
+    .hero h1 .accent { color: var(--teal); }
+    .hero-sub {
+      font-size: 17px;
+      color: rgba(255, 255, 255, 0.6);
+      line-height: 1.7;
+      max-width: 520px;
+      margin-bottom: 2rem;
+    }
+    .hero-actions { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--amber);
+      color: #0f0f0f;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 12px 22px;
+      border-radius: 6px;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-ghost {
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 15px;
+      font-weight: 500;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+      padding-bottom: 2px;
+    }
+
+    /* STRIP */
+    .strip { background: var(--teal); padding: 16px 2rem; text-align: center; }
+    .strip p {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 0.3px;
+    }
+
+    /* SECTIONS */
+    section { padding: 4rem 2rem; }
+    .sec-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 0.5rem;
+    }
+    .sec-title { font-size: 28px; font-weight: 700; margin-bottom: 0.5rem; color: #1a1a1a; }
+    .sec-sub {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.65;
+      max-width: 520px;
+      margin-bottom: 2.5rem;
+    }
+
+    /* FEATURED WORK */
+    .featured { background: #fff; }
+    .work-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+    .work-card { border: 1px solid var(--border); border-radius: 10px; padding: 1.5rem; }
+    .tag-teal {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      background: #e6f7f5;
+      color: #007a6e;
+      padding: 3px 8px;
+      border-radius: 4px;
+      display: inline-block;
+      margin-bottom: 0.75rem;
+      font-weight: 500;
+    }
+    .tag-purple {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      background: #eeebfb;
+      color: #4330a0;
+      padding: 3px 8px;
+      border-radius: 4px;
+      display: inline-block;
+      margin-bottom: 0.75rem;
+      font-weight: 500;
+    }
+    .work-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 0.5rem; color: #1a1a1a; }
+    .work-card p { font-size: 14px; color: var(--muted); line-height: 1.6; }
+
+    /* LEARN */
+    .learn { background: var(--off-white); }
+    .learn-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .learn-card { background: #fff; border-radius: 10px; padding: 1.25rem; border: 1px solid var(--border); }
+    .learn-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 0.4rem; color: #1a1a1a; line-height: 1.45; }
+    .learn-card p { font-size: 13px; color: var(--muted); line-height: 1.55; }
+
+    /* WORK WITH ME */
+    .wwm { background: #fff; }
+    .services-list { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .service-item {
+      padding: 1.25rem 1.25rem 1.25rem 1.35rem;
+      border-left: 3px solid var(--teal);
+      background: #f5fdf9;
+      border-radius: 0 8px 8px 0;
+    }
+    .service-item h3 { font-size: 15px; font-weight: 700; margin-bottom: 0.4rem; color: #1a1a1a; }
+    .service-item p { font-size: 13px; color: var(--muted); line-height: 1.55; }
+
+    /* RESOURCES */
+    .resources { background: var(--off-white); }
+    .resources-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .resource-card { background: #fff; border-radius: 10px; padding: 1.25rem; border: 1px solid var(--border); }
+    .resource-card .rtype {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+    .resource-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 0.4rem; color: #1a1a1a; }
+    .resource-card p { font-size: 13px; color: var(--muted); line-height: 1.55; }
+
+    /* ABOUT */
+    .about { background: var(--black); color: #fff; padding: 4rem 2rem; }
+    .about .mono-label { margin-bottom: 0.75rem; }
+    .about h2 { font-size: 28px; font-weight: 700; margin-bottom: 1rem; color: #fff; }
+    .about p {
+      font-size: 15px;
+      color: rgba(255, 255, 255, 0.65);
+      line-height: 1.75;
+      max-width: 560px;
+      margin-bottom: 1rem;
+    }
+    .about a {
+      color: var(--teal);
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 14px;
+      border-bottom: 1px solid var(--teal);
+      padding-bottom: 2px;
+      display: inline-block;
+      margin-top: 0.5rem;
+    }
+
+    /* FINAL CTA */
+    .cta-section { background: var(--off-white); text-align: center; padding: 5rem 2rem; }
+    .cta-section h2 { font-size: 32px; font-weight: 800; margin-bottom: 0.75rem; color: #1a1a1a; }
+    .cta-section p {
+      color: var(--muted);
+      font-size: 16px;
+      max-width: 440px;
+      margin: 0 auto 2rem;
+      line-height: 1.65;
+    }
+    .cta-actions { display: flex; gap: 1rem; justify-content: center; align-items: center; flex-wrap: wrap; }
+    .btn-outline {
+      border: 1.5px solid #1a1a1a;
+      color: #1a1a1a;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 11px 22px;
+      border-radius: 6px;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--black);
+      color: rgba(255, 255, 255, 0.4);
+      padding: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-logo { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; font-weight: 800; }
+    .footer-logo .b { color: var(--teal); }
+    .footer-logo .w { font-weight: 700; font-style: italic; opacity: 0.55; color: rgba(255, 255, 255, 0.8); }
+    .footer-logo .s { color: var(--purple); }
+    .footer-links { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+    .footer-links a { color: rgba(255, 255, 255, 0.35); text-decoration: none; font-size: 13px; }
+    footer small { font-size: 12px; }
+
+    @media (max-width: 640px) {
+      .work-grid, .learn-grid, .resources-grid, .services-list { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 30px; }
+      .nav-links a:not(.btn-cta) { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#" class="logo"><span class="b">Build</span><span class="w">with</span><span class="s">Shannon</span></a>
+    <div class="nav-links">
+      <a href="#">Work</a>
+      <a href="#">Learn</a>
+      <a href="#">Resources</a>
+      <a href="#">About</a>
+      <a href="#" class="btn-cta">Let's Build →</a>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <div class="mono-label">Build With Shannon</div>
+    <h1>You should be guiding the AI.<br>Not <span class="accent">the other way around.</span></h1>
+    <p class="hero-sub">You're using tools you don't understand to ship things you can't maintain. I teach business owners how to actually guide the AI, so you own what you build.</p>
+    <div class="hero-actions">
+      <a href="#" class="btn-primary">Let's Build →</a>
+      <a href="#" class="btn-ghost">See the Work ↓</a>
+    </div>
+  </div>
+
+  <div class="strip">
+    <p>Real builds. Real understanding. No black boxes.</p>
+  </div>
+
+  <section class="featured">
+    <div class="sec-label">Systems</div>
+    <div class="sec-title">What I've Built</div>
+    <p class="sec-sub">Structured systems for people who are tired of following the AI and want to start leading it.</p>
+    <div class="work-grid">
+      <div class="work-card">
+        <div class="tag-teal">System</div>
+        <h3>Personal AI System</h3>
+        <p>Turn scattered AI conversations into a private, searchable intelligence system you actually control.</p>
+      </div>
+      <div class="work-card">
+        <div class="tag-purple">Playbook</div>
+        <h3>Brand Authority Operating System</h3>
+        <p>A complete playbook for building credibility and positioning without handing the wheel to a chatbot.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="learn">
+    <div class="sec-label">Learning</div>
+    <div class="sec-title">Learn With Shannon</div>
+    <p class="sec-sub">Free and paid resources for builders who want to understand what they're building, not just ship it.</p>
+    <div class="learn-grid">
+      <div class="learn-card">
+        <div class="tag-teal">Tutorial</div>
+        <h3>Building Your First AI-Powered System</h3>
+        <p>Step-by-step, no hand-waving. You understand every decision.</p>
+      </div>
+      <div class="learn-card">
+        <div class="tag-teal">Guide</div>
+        <h3>Personal Brand Positioning Guide</h3>
+        <p>Stop copying AI-generated positioning. Here's how to define your own.</p>
+      </div>
+      <div class="learn-card">
+        <div class="tag-teal">Video</div>
+        <h3>Structured Thinking for Clear Communication</h3>
+        <p>How to turn messy ideas into frameworks that actually teach.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wwm">
+    <div class="sec-label">Services</div>
+    <div class="sec-title">Work With Shannon</div>
+    <p class="sec-sub">Strategy, system planning, and technical guidance for builders who want to create with intention, not just vibes.</p>
+    <div class="services-list">
+      <div class="service-item">
+        <h3>Strategy & Planning</h3>
+        <p>Figure out what to build, in what order, and why. No wasted sprints.</p>
+      </div>
+      <div class="service-item">
+        <h3>System Design</h3>
+        <p>Architect workflows and tools you can maintain when things break.</p>
+      </div>
+      <div class="service-item">
+        <h3>Technical Implementation</h3>
+        <p>Build alongside you, explaining every decision so you own the output.</p>
+      </div>
+      <div class="service-item">
+        <h3>Teaching & Training</h3>
+        <p>Learn the skill, not just the shortcut. Stop depending on a black box.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="resources">
+    <div class="sec-label">Resources</div>
+    <div class="sec-title">Tools to Take With You</div>
+    <p class="sec-sub">Guides, templates, and playbooks for builders who ship.</p>
+    <div class="resources-grid">
+      <div class="resource-card">
+        <div class="rtype">Guide</div>
+        <h3>The Systems Builder's Handbook</h3>
+        <p>Design systems that don't fall apart the moment you touch them.</p>
+      </div>
+      <div class="resource-card">
+        <div class="rtype">Template</div>
+        <h3>Brand Authority Template Kit</h3>
+        <p>Positioning, messaging, and content frameworks, ready to fill in.</p>
+      </div>
+      <div class="resource-card">
+        <div class="rtype">Course</div>
+        <h3>AI Integration Playbook</h3>
+        <p>When to use AI, when not to, and how to stay in control of the build.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="about">
+    <div class="mono-label">About</div>
+    <h2>I started where you are.</h2>
+    <p>I taught myself to code while working as a cashier. I built systems without a team, a title, or a budget. I know what it feels like to be the only one who can make it work, and to have no idea how to fix it when it breaks.</p>
+    <p>My job is making sure you never feel that way. Not by doing it for you, but by making sure you actually understand what's happening inside what you build.</p>
+    <a href="#">Read the full story →</a>
+  </section>
+
+  <section class="cta-section">
+    <h2>Ready to stop guessing?</h2>
+    <p>Whether you're stuck in the breakage loop or just starting, let's figure out what you actually need to build.</p>
+    <div class="cta-actions">
+      <a href="#" class="btn-primary">Start a Conversation →</a>
+      <a href="#" class="btn-outline">Browse Resources</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-logo"><span class="b">Build</span><span class="w">with</span><span class="s">Shannon</span></div>
+    <div class="footer-links">
+      <a href="#">Work</a>
+      <a href="#">Learn</a>
+      <a href="#">Resources</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </div>
+    <small>© 2025 Build With Shannon</small>
+  </footer>
+
+</body>
+</html>

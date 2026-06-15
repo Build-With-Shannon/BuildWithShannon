@@ -7,7 +7,7 @@ interface FeaturedWorkSectionProps {
 
 export default function FeaturedWorkSection({ content }: FeaturedWorkSectionProps) {
   return (
-    <section id="featured-work" className="bg-brand-off-white py-24">
+    <section id="featured-work" className="bg-white pt-12 pb-24">
       <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
         {/* Left */}
         <div className="motion-enter flex flex-col gap-6">
@@ -22,7 +22,7 @@ export default function FeaturedWorkSection({ content }: FeaturedWorkSectionProp
           </p>
           <Link
             href={content.ctaButton.href}
-            className="w-fit px-7 py-3 bg-brand-primary text-white text-sm font-semibold rounded-[var(--radius-btn)] hover:opacity-90 transition-opacity"
+            className="w-fit px-7 py-3 bg-brand-cta text-brand-charcoal text-sm font-semibold rounded-[var(--radius-btn)] hover:opacity-90 transition-opacity"
           >
             {content.ctaButton.label}
           </Link>

@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   const navItems = [
@@ -13,64 +14,35 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-brand-charcoal text-brand-off-white border-t border-brand-violet border-opacity-30">
-      <div className="px-6 py-12 max-w-7xl mx-auto">
-        {/* Top section */}
-        <div className="mb-8 flex flex-col items-start gap-10 border-b border-brand-violet border-opacity-20 pb-8 lg:flex-row lg:justify-between lg:gap-12">
-          {/* Brand */}
-          <div className="max-w-md">
-            <Link href="/" className="text-lg font-semibold tracking-tight mb-2 block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-violet/70 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-charcoal">
-              Build With Shannon
+    <footer className="dark-section border-t border-white/10">
+      <div className="px-6 py-6 max-w-7xl mx-auto flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+
+        <Link href="/" className="focus-visible:outline-none">
+          <Image
+            src="/images/bws-logo-light-transparent.png"
+            alt="Build With Shannon"
+            width={160}
+            height={36}
+            className="h-8 w-auto"
+          />
+        </Link>
+
+        <nav className="flex flex-wrap gap-x-6 gap-y-2" aria-label="Footer navigation">
+          {navItems.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="text-sm text-white/40 hover:text-white/80 transition-colors"
+            >
+              {item.label}
             </Link>
-            <p className="text-sm text-brand-soft-gray">
-              Building, Teaching & Creating Smart Solutions with AI
-            </p>
-          </div>
+          ))}
+        </nav>
 
-          {/* Navigation */}
-          <nav aria-label="Footer navigation">
-            <ul className="flex flex-col gap-3">
-              {navItems.map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className="text-sm text-brand-soft-gray hover:text-brand-off-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-violet/70 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-charcoal"
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
+        <p className="text-xs text-white/30">
+          © {new Date().getFullYear()} Build With Shannon
+        </p>
 
-          {/* Social */}
-          <div className="w-full lg:w-auto">
-            <p className="text-xs uppercase tracking-wider text-brand-violet mb-3">
-              Connect
-            </p>
-            <ul className="flex flex-wrap gap-4">
-              {[
-                { label: 'LinkedIn', href: '#' },
-                { label: 'Twitter', href: '#' },
-                { label: 'YouTube', href: '#' },
-              ].map((social) => (
-                <li key={social.label}>
-                  <Link
-                    href={social.href}
-                    className="text-sm text-brand-soft-gray hover:text-brand-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-violet/70 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-charcoal"
-                  >
-                    {social.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
-        {/* Bottom section */}
-        <div className="text-xs text-brand-soft-gray text-center">
-          <p>&copy; {new Date().getFullYear()} Shannon Reed. All rights reserved.</p>
-        </div>
       </div>
     </footer>
   );

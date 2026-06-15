@@ -1,5 +1,4 @@
 import HeroSection from '@/app/components/sections/HeroSection';
-import IntroStrip from '@/app/components/sections/IntroStrip';
 import FeaturedWorkSection from '@/app/components/sections/FeaturedWorkSection';
 import LearnSection from '@/app/components/sections/LearnSection';
 import WorkWithMeSection from '@/app/components/sections/WorkWithMeSection';
@@ -23,7 +22,6 @@ export default function Home() {
       <Reveal>
         <HeroSection content={heroContent} />
       </Reveal>
-      <IntroStrip />
       <Reveal delayMs={60}>
         <FeaturedWorkSection content={featuredWorkContent} />
       </Reveal>

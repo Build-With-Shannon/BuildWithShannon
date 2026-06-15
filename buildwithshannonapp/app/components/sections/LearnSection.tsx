@@ -13,7 +13,7 @@ interface LearnSectionProps {
 
 export default function LearnSection({ content }: LearnSectionProps) {
   return (
-    <section className="bg-brand-soft-gray/30 py-24">
+    <section className="bg-brand-off-white py-24">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="motion-enter mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-brand-charcoal tracking-tight mb-4">

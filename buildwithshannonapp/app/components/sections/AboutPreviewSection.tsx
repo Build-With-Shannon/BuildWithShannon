@@ -7,16 +7,19 @@ interface AboutPreviewSectionProps {
 
 export default function AboutPreviewSection({ content }: AboutPreviewSectionProps) {
   return (
-    <section className="bg-brand-soft-gray/20 py-24 border-y border-brand-soft-gray">
+    <section className="bg-brand-off-white py-24">
       <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
         {/* Left — portrait */}
         <div className="motion-enter flex justify-center md:justify-start">
           <div
-            className="w-72 h-80 rounded-[var(--radius-card)] bg-gradient-to-br from-brand-soft-gray to-brand-off-white border border-brand-soft-gray flex items-center justify-center"
+            className="dark-section w-72 h-80 rounded-[var(--radius-card)] border border-white/10 flex items-center justify-center"
             style={{ boxShadow: 'var(--shadow-card)' }}
           >
-            <span className="text-xs text-brand-charcoal/30 uppercase tracking-wider font-medium">
-              Portrait
+            <span
+              className="text-white select-none"
+              style={{ fontSize: '7rem', fontFamily: 'var(--font-heading)', fontWeight: 800, opacity: 0.18, lineHeight: 1 }}
+            >
+              SR
             </span>
           </div>
         </div>

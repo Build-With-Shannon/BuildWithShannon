@@ -1,31 +1,29 @@
 import { HeroContent } from './types';
 
 export const heroContent: HeroContent = {
+  eyebrow: 'Build With Shannon',
   lines: [
     {
-      text: 'Shannon Reed',
+      text: 'You should be guiding the AI.',
       style: 'bold',
     },
     {
-      text: 'Building, Teaching & Creating',
+      text: 'Not the other way around.',
       style: 'semibold',
     },
-    {
-      text: 'Smart Solutions with AI',
-      style: 'thin',
-    },
   ],
+  description:
+    'I teach business owners how to use AI tools correctly — so you ship things you actually understand and can maintain.',
   buttons: [
     {
-      label: 'Explore the Site',
-      href: '#featured-work',
+      label: "Let's Build",
+      href: '/work-with-me',
       variant: 'primary',
     },
     {
-      label: 'Build With Shannon',
-      href: '/work-with-me',
+      label: 'See the Work',
+      href: '#featured-work',
       variant: 'secondary',
     },
   ],
-  imageUrl: '/images/hero-portrait.jpg', // Placeholder path
 };
