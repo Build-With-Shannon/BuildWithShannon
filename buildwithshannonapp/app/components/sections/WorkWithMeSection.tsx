@@ -19,7 +19,7 @@ export default function WorkWithMeSection({ content }: WorkWithMeSectionProps) {
       <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
         {/* Left — positioning copy */}
         <div className="motion-enter flex flex-col gap-6">
-          <span className="text-xs font-semibold uppercase tracking-widest text-brand-violet">
+          <span className="eyebrow text-brand-violet">
             Work With Me
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight leading-tight">

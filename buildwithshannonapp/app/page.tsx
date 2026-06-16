@@ -25,6 +25,7 @@ export default function Home() {
       <Reveal delayMs={60}>
         <FeaturedWorkSection content={featuredWorkContent} />
       </Reveal>
+      <div className="section-divider" />
       <Reveal delayMs={80}>
         <LearnSection content={learnContent} />
       </Reveal>
@@ -34,6 +35,7 @@ export default function Home() {
       <Reveal delayMs={100}>
         <ResourcesSection content={resourcesContent} />
       </Reveal>
+      <div className="section-divider" />
       <Reveal delayMs={110}>
         <AboutPreviewSection content={aboutPreviewContent} />
       </Reveal>

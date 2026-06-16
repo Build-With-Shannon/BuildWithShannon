@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Sora } from "next/font/google";
+import { Plus_Jakarta_Sans, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -11,10 +11,17 @@ const headingFont = Plus_Jakarta_Sans({
   display: "swap",
 });
 
-const bodyFont = Sora({
-  variable: "--font-sora",
+const bodyFont = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "500"],
+  display: "swap",
+});
+
+const monoFont = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
+  subsets: ["latin"],
+  weight: ["400", "500"],
   display: "swap",
 });
 
@@ -49,7 +56,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${headingFont.variable} ${bodyFont.variable} min-h-screen antialiased`}>
+      <body className={`${headingFont.variable} ${bodyFont.variable} ${monoFont.variable} min-h-screen antialiased`}>
         <a href="#main-content" className="skip-link">
           Skip to content
         </a>

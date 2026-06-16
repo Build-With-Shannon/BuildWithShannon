@@ -7,6 +7,12 @@ const typeLabel: Record<string, string> = {
   video: 'Video',
 };
 
+const typeBadge: Record<string, string> = {
+  tutorial: 'badge badge-teal',
+  guide: 'badge badge-purple',
+  video: 'badge badge-teal',
+};
+
 interface LearnSectionProps {
   content: LearnContent;
 }
@@ -29,7 +35,7 @@ export default function LearnSection({ content }: LearnSectionProps) {
             <Link
               key={card.id}
               href={card.href}
-              className="group bg-white rounded-[var(--radius-card)] border border-brand-soft-gray overflow-hidden hover:border-brand-primary transition-all duration-300 hover:-translate-y-1"
+              className="group bg-white rounded-[var(--radius-card)] border border-[rgba(0,168,150,0.15)] overflow-hidden hover:border-brand-primary transition-all duration-300 hover:-translate-y-1"
               style={{ boxShadow: 'var(--shadow-card)' }}
             >
               {/* Thumbnail */}
@@ -42,7 +48,7 @@ export default function LearnSection({ content }: LearnSectionProps) {
                 <div className="h-full w-full bg-brand-charcoal/10" />
               </div>
               <div className="p-5 flex flex-col gap-2">
-                <span className="text-xs font-semibold uppercase tracking-widest text-brand-primary">
+                <span className={typeBadge[card.type] ?? 'badge badge-teal'}>
                   {typeLabel[card.type] ?? card.type}
                 </span>
                 <h3 className="text-base font-semibold text-brand-charcoal leading-snug group-hover:text-brand-primary transition-colors">

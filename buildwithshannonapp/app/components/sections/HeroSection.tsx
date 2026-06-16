@@ -12,7 +12,7 @@ export default function HeroSection({ content }: HeroSectionProps) {
         <div className="motion-enter flex flex-col gap-6 max-w-5xl">
 
           {content.eyebrow && (
-            <span className="text-xs font-semibold uppercase tracking-widest text-brand-primary">
+            <span className="eyebrow text-brand-primary">
               {content.eyebrow}
             </span>
           )}

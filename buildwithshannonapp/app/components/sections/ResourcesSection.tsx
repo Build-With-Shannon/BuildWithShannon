@@ -6,10 +6,10 @@ interface ResourcesSectionProps {
   content: ResourcesContent;
 }
 
-const typeConfig: Record<string, { icon: React.ReactNode; bg: string; iconColor: string }> = {
-  Guide:    { icon: <BookOpen size={28} />,    bg: 'bg-brand-primary/10',  iconColor: 'text-brand-primary' },
-  Template: { icon: <FileText size={28} />,    bg: 'bg-brand-violet/10',   iconColor: 'text-brand-violet' },
-  Course:   { icon: <PlayCircle size={28} />,  bg: 'bg-brand-cta/10',      iconColor: 'text-brand-cta' },
+const typeConfig: Record<string, { icon: React.ReactNode; bg: string; iconColor: string; badge: string }> = {
+  Guide:    { icon: <BookOpen size={28} />,    bg: 'bg-brand-primary/10',  iconColor: 'text-brand-primary', badge: 'badge badge-teal' },
+  Template: { icon: <FileText size={28} />,    bg: 'bg-[#EDE9FF]',         iconColor: 'text-[#5B3DBF]',     badge: 'badge badge-purple' },
+  Course:   { icon: <PlayCircle size={28} />,  bg: 'bg-brand-primary/10',  iconColor: 'text-brand-primary', badge: 'badge badge-teal' },
 };
 
 export default function ResourcesSection({ content }: ResourcesSectionProps) {
@@ -24,34 +24,31 @@ export default function ResourcesSection({ content }: ResourcesSectionProps) {
         </div>
 
         <div className="motion-stagger grid grid-cols-1 md:grid-cols-3 gap-6">
-          {content.cards.map((card) => (
-            <div
-              key={card.id}
-              className="bg-white rounded-[var(--radius-card)] border border-brand-soft-gray overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:border-brand-primary"
-              style={{ boxShadow: 'var(--shadow-card)' }}
-            >
-              {/* Icon cover */}
-              {(() => {
-                const cfg = typeConfig[card.type] ?? typeConfig['Guide'];
-                return (
-                  <div className={`h-40 ${cfg.bg} flex items-center justify-center`}>
-                    <span className={cfg.iconColor}>{cfg.icon}</span>
-                  </div>
-                );
-              })()}
-              <div className="p-6 flex flex-col gap-2">
-                <span className="text-xs font-semibold uppercase tracking-widest text-brand-primary">
-                  {card.type}
-                </span>
-                <h3 className="text-base font-semibold text-brand-charcoal leading-snug">
-                  {card.title}
-                </h3>
-                <p className="text-sm text-brand-charcoal/70 leading-relaxed">
-                  {card.description}
-                </p>
+          {content.cards.map((card) => {
+            const cfg = typeConfig[card.type] ?? typeConfig['Guide'];
+            return (
+              <div
+                key={card.id}
+                className="bg-white rounded-[var(--radius-card)] border border-[rgba(0,168,150,0.15)] overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:border-brand-primary"
+                style={{ boxShadow: 'var(--shadow-card)' }}
+              >
+                <div className={`h-40 ${cfg.bg} flex items-center justify-center`}>
+                  <span className={cfg.iconColor}>{cfg.icon}</span>
+                </div>
+                <div className="p-6 flex flex-col gap-2">
+                  <span className={cfg.badge}>
+                    {card.type}
+                  </span>
+                  <h3 className="text-base font-semibold text-brand-charcoal leading-snug">
+                    {card.title}
+                  </h3>
+                  <p className="text-sm text-brand-charcoal/70 leading-relaxed">
+                    {card.description}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

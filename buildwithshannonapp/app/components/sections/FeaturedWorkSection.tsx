@@ -11,7 +11,7 @@ export default function FeaturedWorkSection({ content }: FeaturedWorkSectionProp
       <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
         {/* Left */}
         <div className="motion-enter flex flex-col gap-6">
-          <span className="text-xs font-semibold uppercase tracking-widest text-brand-primary">
+          <span className="eyebrow text-brand-primary">
             {content.eyebrow}
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-brand-charcoal tracking-tight leading-tight">
@@ -34,7 +34,7 @@ export default function FeaturedWorkSection({ content }: FeaturedWorkSectionProp
             <Link
               key={project.id}
               href={project.href}
-              className="group relative h-56 rounded-[var(--radius-card)] border border-brand-soft-gray overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:border-brand-primary"
+              className="group relative h-56 rounded-[var(--radius-card)] border border-[rgba(0,168,150,0.15)] overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:border-brand-primary"
               style={{ boxShadow: 'var(--shadow-card)' }}
             >
               {/* Image placeholder */}

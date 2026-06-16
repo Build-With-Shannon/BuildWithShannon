@@ -22,7 +22,7 @@ export default function Header() {
   const isActiveRoute = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-brand-soft-gray/45 bg-brand-off-white/58 backdrop-blur-lg supports-[backdrop-filter]:bg-brand-off-white/50">
+    <header className="sticky top-0 z-50 border-b border-[rgba(0,168,150,0.14)] bg-white/95 backdrop-blur-[14px] supports-[backdrop-filter]:bg-white/90">
       <div className="px-6 py-5 max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo */}
         <Link
@@ -47,10 +47,10 @@ export default function Header() {
                 <Link
                   href={item.href}
                   aria-current={isActiveRoute(item.href) ? 'page' : undefined}
-                  className={`whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary/70 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-off-white ${
+                  className={`eyebrow whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary/70 focus-visible:ring-offset-2 focus-visible:ring-offset-white ${
                     isActiveRoute(item.href)
                       ? 'text-brand-primary'
-                      : 'text-brand-charcoal hover:text-brand-primary'
+                      : 'text-[#9896A8] hover:text-brand-primary'
                   }`}
                 >
                   {item.label}
@@ -81,7 +81,7 @@ export default function Header() {
       </div>
 
       {isMobileMenuOpen ? (
-        <div className="border-t border-brand-soft-gray/50 bg-brand-off-white/95 px-6 pb-8 pt-6 backdrop-blur-xl lg:hidden">
+        <div className="border-t border-[rgba(0,168,150,0.14)] bg-white/98 px-6 pb-8 pt-6 backdrop-blur-xl lg:hidden">
           <nav aria-label="Mobile navigation">
             <ul className="flex flex-col gap-5">
               {navItems.map((item) => (
@@ -89,7 +89,7 @@ export default function Header() {
                   <Link
                     href={item.href}
                     aria-current={isActiveRoute(item.href) ? 'page' : undefined}
-                    className={`block text-2xl font-medium tracking-tight transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary/70 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-off-white ${
+                    className={`block text-2xl font-medium tracking-tight transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary/70 focus-visible:ring-offset-2 focus-visible:ring-offset-white ${
                       isActiveRoute(item.href)
                         ? 'text-brand-primary'
                         : 'text-brand-charcoal hover:text-brand-primary'
