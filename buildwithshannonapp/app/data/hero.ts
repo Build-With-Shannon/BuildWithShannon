@@ -13,7 +13,7 @@ export const heroContent: HeroContent = {
     },
   ],
   description:
-    'I teach business owners how to use AI tools correctly — so you ship things you actually understand and can maintain.',
+    'I teach business owners how to use AI tools correctly, so you ship things you actually understand and can maintain.',
   buttons: [
     {
       label: "Let's Build",
