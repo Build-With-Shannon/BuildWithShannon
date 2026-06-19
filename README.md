@@ -1,8 +1,11 @@
 # Build With Shannon
 
-## High-Level Overview
+## Overview
 
 Build With Shannon is a premium personal brand website designed to present Shannon as a builder, teacher, and systems-focused creator working with AI.
+
+![site image](buildwithshannonapp/docs/images/desktop-hero.png)
+
 
 The site is built as a brand headquarters, not a portfolio. It gives visitors clear paths to:
 
